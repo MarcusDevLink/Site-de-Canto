@@ -3,28 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nail the Pitch Web</title>
+  <title>Afinador de Canto</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav><ul><li><a href="test.html">test</a></li></ul></nav>
-    </header>
   <main>
-    <h1>Nail the Pitch - Versão Web</h1>
+    <h1>Afinador de Canto 🎤</h1>
 
+    <!-- Display principal -->
     <div class="display">
       <div id="note">--</div>
       <div id="freq">0 Hz</div>
     </div>
 
+    <!-- Barra de afinação -->
+    <div class="tuner">
+      <div id="tunerBar"></div>
+    </div>
+    <p id="cents">-- cents</p>
+
+    <!-- Visualização waveform -->
     <canvas id="visualizer"></canvas>
 
+    <!-- Controles principais -->
     <div class="controls">
       <button id="startBtn">🎤 Iniciar</button>
       <button id="recordBtn">⏺️ Gravar</button>
       <button id="downloadBtn" disabled>💾 Baixar MIDI</button>
     </div>
+
+    <!-- Modo treino -->
+    <section class="training">
+      <h2>🎯 Modo Treino</h2>
+      <label for="targetNote">Escolha uma nota alvo:</label>
+      <select id="targetNote">
+        <option value="C4">C4</option>
+        <option value="D4">D4</option>
+        <option value="E4">E4</option>
+        <option value="F4">F4</option>
+        <option value="G4">G4</option>
+        <option value="A4">A4</option>
+        <option value="B4">B4</option>
+        <option value="C5">C5</option>
+      </select>
+      <p id="trainingStatus">Aguardando início...</p>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/midiwriter-js@3.1.1/build/MidiWriter.min.js"></script>
